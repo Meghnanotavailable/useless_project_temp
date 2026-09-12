@@ -1,0 +1,1864 @@
+/* ============================================================
+   PINK PIXEL AUTOPSY
+   COMPLETE CSS
+   ============================================================ */
+
+
+/* ============================================================
+   1. BASIC RESET
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji";
+
+    background-color: #ffd6ec;
+
+    background-image:
+        /* Brain & Braincell (Neuron) SVG Pattern */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- BRAIN 1 (Top Left) --%3E%3Cpath d='M44 52 C32 38 46 22 62 24 C69 15 84 16 92 25 C100 17 116 19 122 30 C130 35 135 50 128 62 C134 74 130 90 118 94 C112 104 96 106 86 99 C80 107 64 106 56 97 C42 99 34 88 38 75 C30 68 32 55 44 52 Z' fill='rgba(255,255,255,0.18)' stroke='rgba(212,20,114,0.32)' stroke-width='2'/%3E%3Cpath d='M52 42 Q62 54 54 66 Q48 78 58 84' stroke='rgba(212,20,114,0.26)' stroke-width='1.6'/%3E%3Cpath d='M78 28 Q82 46 79 64 Q77 82 81 94' stroke='rgba(212,20,114,0.3)' stroke-width='1.8'/%3E%3Cpath d='M98 38 Q90 52 96 66 Q103 80 94 88' stroke='rgba(212,20,114,0.26)' stroke-width='1.6'/%3E%3Cpath d='M66 50 Q78 56 68 68' stroke='rgba(212,20,114,0.22)' stroke-width='1.4'/%3E%3Cpath d='M88 50 Q78 58 86 70' stroke='rgba(212,20,114,0.22)' stroke-width='1.4'/%3E%3C!-- MULTIPOLAR NEURON (Top Right) --%3E%3Ccircle cx='235' cy='72' r='9' fill='rgba(255,20,147,0.2)' stroke='rgba(212,20,114,0.42)' stroke-width='1.8'/%3E%3Ccircle cx='235' cy='72' r='3.5' fill='rgba(255,255,255,0.7)'/%3E%3C!-- Dendrites radiating out --%3E%3Cpath d='M227 66 Q215 58 208 60 M208 60 L200 54 M208 60 L204 68 M230 81 Q220 90 212 87 M212 87 L204 84 M212 87 L210 95 M239 63 Q244 50 241 42 M241 42 L235 36 M241 42 L249 38 M244 76 Q255 72 262 77 M262 77 L270 72 M262 77 L266 84 M232 63 Q228 50 220 46' stroke='rgba(212,20,114,0.35)' stroke-width='1.5'/%3E%3C!-- Axon with myelin curves --%3E%3Cpath d='M239 80 C252 98 260 120 252 142 C246 158 260 174 266 186' stroke='rgba(212,20,114,0.4)' stroke-width='1.8'/%3E%3C!-- Synaptic axon terminals --%3E%3Ccircle cx='266' cy='186' r='3' fill='rgba(255,20,147,0.5)' stroke='rgba(212,20,114,0.4)' stroke-width='1'/%3E%3Cpath d='M266 186 L276 181 M266 186 L274 196 M266 186 L260 198' stroke='rgba(212,20,114,0.35)' stroke-width='1.3'/%3E%3Ccircle cx='276' cy='181' r='2' fill='rgba(255,20,147,0.45)'/%3E%3Ccircle cx='274' cy='196' r='2' fill='rgba(255,20,147,0.45)'/%3E%3Ccircle cx='260' cy='198' r='2' fill='rgba(255,20,147,0.45)'/%3E%3C!-- ASTROCYTE / GLIAL BRAIN CELL (Mid Left) --%3E%3Ccircle cx='82' cy='185' r='7.5' fill='rgba(255,20,147,0.22)' stroke='rgba(212,20,114,0.42)' stroke-width='1.8'/%3E%3Ccircle cx='82' cy='185' r='2.8' fill='rgba(255,255,255,0.7)'/%3E%3C!-- Star-like processes --%3E%3Cpath d='M75 180 Q62 172 54 176 M54 176 L46 172 M54 176 L50 184 M77 192 Q68 205 60 203 M60 203 L52 207 M60 203 L58 213 M88 178 Q94 165 102 163 M102 163 L107 155 M102 163 L110 168 M90 190 Q104 195 112 188 M112 188 L120 190 M112 188 L116 180 M82 177 L82 162 M82 193 L82 208 M82 162 L76 156 M82 162 L88 156 M82 208 L76 214 M82 208 L88 214' stroke='rgba(212,20,114,0.36)' stroke-width='1.5'/%3E%3C!-- PYRAMIDAL BRAIN CELL (Mid-Bottom Right) --%3E%3Cpolygon points='200,240 192,256 208,256' fill='rgba(255,20,147,0.22)' stroke='rgba(212,20,114,0.42)' stroke-width='1.6'/%3E%3Ccircle cx='200' cy='250' r='2.5' fill='rgba(255,255,255,0.7)'/%3E%3C!-- Apical dendrite pointing up --%3E%3Cpath d='M200 240 Q198 220 205 204 M205 204 L198 194 M205 204 L212 196 M205 204 L204 188' stroke='rgba(212,20,114,0.38)' stroke-width='1.6'/%3E%3C!-- Basal dendrites --%3E%3Cpath d='M192 256 Q178 262 168 260 M168 260 L160 264 M208 256 Q222 262 232 258 M232 258 L240 262' stroke='rgba(212,20,114,0.35)' stroke-width='1.4'/%3E%3C!-- Axon --%3E%3Cpath d='M200 256 Q200 275 194 290 Q190 305 202 316' stroke='rgba(212,20,114,0.4)' stroke-width='1.7'/%3E%3Ccircle cx='202' cy='316' r='2.5' fill='rgba(255,20,147,0.5)'/%3E%3C!-- BRAIN 2 (Bottom Left-Center) --%3E%3Cg transform='translate(100, 245) scale(0.6)'%3E%3Cpath d='M44 52 C32 38 46 22 62 24 C69 15 84 16 92 25 C100 17 116 19 122 30 C130 35 135 50 128 62 C134 74 130 90 118 94 C112 104 96 106 86 99 C80 107 64 106 56 97 C42 99 34 88 38 75 C30 68 32 55 44 52 Z' fill='rgba(255,255,255,0.16)' stroke='rgba(212,20,114,0.32)' stroke-width='2'/%3E%3Cpath d='M52 42 Q62 54 54 66 Q48 78 58 84' stroke='rgba(212,20,114,0.26)' stroke-width='1.6'/%3E%3Cpath d='M78 28 Q82 46 79 64 Q77 82 81 94' stroke='rgba(212,20,114,0.3)' stroke-width='1.8'/%3E%3Cpath d='M98 38 Q90 52 96 66' stroke='rgba(212,20,114,0.26)' stroke-width='1.6'/%3E%3C/g%3E%3C!-- SYNAPSE NODES & CONNECTING NEURAL PATHWAYS --%3E%3Ccircle cx='160' cy='135' r='4' fill='rgba(255,20,147,0.25)' stroke='rgba(212,20,114,0.45)' stroke-width='1.2'/%3E%3Ccircle cx='160' cy='135' r='1.8' fill='rgba(255,255,255,0.85)'/%3E%3Cpath d='M160 135 L200 115 M160 135 L125 155 M160 135 L155 98 M160 135 L170 175' stroke='rgba(212,20,114,0.24)' stroke-width='1.1' stroke-dasharray='3,3'/%3E%3Ccircle cx='200' cy='115' r='2.2' fill='rgba(255,20,147,0.4)'/%3E%3Ccircle cx='125' cy='155' r='2.2' fill='rgba(255,20,147,0.4)'/%3E%3Ccircle cx='155' cy='98' r='2.2' fill='rgba(255,20,147,0.4)'/%3E%3Ccircle cx='170' cy='175' r='2.2' fill='rgba(255,20,147,0.4)'/%3E%3Ccircle cx='25' cy='140' r='2.4' fill='rgba(255,20,147,0.35)'/%3E%3Ccircle cx='305' cy='270' r='2.4' fill='rgba(255,20,147,0.35)'/%3E%3Ccircle cx='18' cy='285' r='2' fill='rgba(255,20,147,0.3)'/%3E%3Ccircle cx='300' cy='30' r='2' fill='rgba(255,20,147,0.3)'/%3E%3Ccircle cx='15' cy='15' r='1.8' fill='rgba(255,20,147,0.3)'/%3E%3C/g%3E%3C/svg%3E"),
+        /* Radiant Pink Medical Gradient */
+        radial-gradient(
+            circle at top,
+            #ffd6ec 0%,
+            #ffc1e3 35%,
+            #f8a8d0 70%,
+            #f48abc 100%
+        );
+
+    background-repeat: repeat, no-repeat;
+    background-size: 320px 320px, cover;
+    background-attachment: fixed, fixed;
+
+    animation: neuralPan 90s linear infinite;
+
+    min-height: 100vh;
+
+    padding: 30px 15px;
+
+    color: #35152a;
+
+    overflow-x: hidden;
+
+    transition:
+        transform 0.1s,
+        filter 0.1s;
+}
+
+
+@keyframes neuralPan {
+    0% {
+        background-position: 0 0, center top;
+    }
+    100% {
+        background-position: 320px 320px, center top;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    body {
+        animation: none;
+    }
+}
+
+
+/* ============================================================
+   2. MAIN CONTAINER
+   ============================================================ */
+
+.container {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 3px solid #ff4fa3;
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 15px 40px rgba(160, 20, 100, 0.25);
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.container::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff1493,
+            #ff69b4,
+            #ffb6d9,
+            #ff69b4,
+            #ff1493
+        );
+}
+
+
+/* ============================================================
+   3. HEADER
+   ============================================================ */
+
+.main-header {
+    margin-bottom: 40px;
+}
+
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    font-size: clamp(2rem, 6vw, 4rem);
+
+    color: #ff1493;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+
+    text-shadow:
+        3px 3px 0 #ffd1e8,
+        0 5px 15px rgba(255, 20, 147, 0.25);
+}
+
+
+.subtitle {
+    font-size: 1.1rem;
+
+    color: #70415d;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+
+.warning-text {
+    display: inline-block;
+
+    font-weight: bold;
+
+    color: #c21870;
+
+    background: #fff0f8;
+
+    border-radius: 10px;
+
+    padding: 12px 18px;
+
+    margin-top: 10px;
+}
+
+
+/* ============================================================
+   4. INPUT SECTIONS
+   ============================================================ */
+
+.input-section {
+    margin-bottom: 35px;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff8fc
+        );
+
+    border: 1px solid #ffd0e5;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 15px rgba(180, 30, 110, 0.08);
+}
+
+
+.input-section h2 {
+    color: #d41472;
+
+    margin-bottom: 15px;
+
+    line-height: 1.4;
+}
+
+
+.input-section p {
+    color: #70415d;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+/* ============================================================
+   5. LABELS
+   ============================================================ */
+
+.input-section label {
+    display: block;
+
+    font-weight: bold;
+
+    color: #8c285e;
+
+    margin-bottom: 10px;
+
+    text-align: left;
+}
+
+
+/* ============================================================
+   6. USERNAME INPUT
+   ============================================================ */
+
+#username {
+    display: block;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    padding: 15px 18px;
+
+    border: 2px solid #ff8ac5;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    background: #fff7fb;
+
+    color: #3b1730;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+
+#username:focus {
+    border-color: #ff1493;
+
+    box-shadow:
+        0 0 0 4px rgba(255, 20, 147, 0.12);
+}
+
+
+#username::placeholder {
+    color: #b77b9c;
+}
+
+
+/* ============================================================
+   7. IMAGE INPUT
+   ============================================================ */
+
+#imageInput {
+    display: block;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 0 auto 25px;
+
+    padding: 15px;
+
+    border: 2px dashed #ff69b4;
+
+    border-radius: 12px;
+
+    background: #fff0f8;
+
+    color: #70234e;
+
+    cursor: pointer;
+
+    line-height: 1.5;
+}
+
+
+#imageInput:hover {
+    background: #ffe5f2;
+}
+
+
+/* ============================================================
+   8. IMAGE PREVIEW
+   ============================================================ */
+
+.preview-container {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-top: 25px;
+}
+
+
+#imagePreview {
+    display: none;
+
+    max-width: 100%;
+
+    max-height: 500px;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+
+    border-radius: 15px;
+
+    border: 4px solid #ff69b4;
+
+    box-shadow:
+        0 10px 30px rgba(180, 30, 110, 0.25);
+
+    background: #ffffff;
+}
+
+
+/* ============================================================
+   8B. MODE SELECTOR TABS
+   ============================================================ */
+
+.mode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    background: #ffe3f1;
+    padding: 6px;
+    border-radius: 50px;
+    border: 2px solid #ff9ecf;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mode-tab {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 40px;
+    border: none;
+    background: transparent;
+    color: #8c285e;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: none;
+    margin: 0;
+    transition: all 0.25s ease;
+}
+
+.mode-tab:hover {
+    background: rgba(255, 255, 255, 0.6);
+    color: #ff1493;
+    transform: translateY(-1px);
+    box-shadow: none;
+}
+
+.mode-tab.active {
+    background: linear-gradient(135deg, #ff1493, #ff4fac);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.35);
+    transform: scale(1.02);
+}
+
+.mode-container {
+    transition: opacity 0.3s ease;
+}
+
+
+/* ============================================================
+   8C. CAMERA VIEWPORT & SCANNER HUD
+   ============================================================ */
+
+.camera-viewport-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    aspect-ratio: 4 / 3;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #12030f;
+    border: 4px solid #ff4fa3;
+    box-shadow: 0 12px 35px rgba(180, 20, 110, 0.3), inset 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+#cameraVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#scannerOverlayCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Offline / Initial State Overlay */
+.camera-status-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, #2e0821 0%, #12020e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    z-index: 10;
+    color: #ffffff;
+    transition: opacity 0.3s ease;
+}
+
+.camera-status-overlay .status-icon {
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+    animation: statusIconPulse 2s infinite ease-in-out;
+}
+
+@keyframes statusIconPulse {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+.camera-status-overlay .status-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ff69b4;
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.camera-status-overlay .status-subtitle {
+    font-size: 0.95rem;
+    color: #ffd4eb;
+    max-width: 420px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+.scanner-btn-primary {
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 800;
+    color: white;
+    background: linear-gradient(135deg, #ff1493, #ff007f);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.6);
+    transition: all 0.2s ease;
+}
+
+.scanner-btn-primary:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.9);
+}
+
+/* Sci-fi reticle overlay */
+.scanner-hud-reticle {
+    position: absolute;
+    inset: 15px;
+    pointer-events: none;
+    z-index: 6;
+    border: 1px solid rgba(255, 105, 180, 0.2);
+    border-radius: 12px;
+}
+
+.reticle-corner {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-color: #ff1493;
+    border-style: solid;
+}
+
+.reticle-corner.top-left {
+    top: -2px;
+    left: -2px;
+    border-width: 3px 0 0 3px;
+    border-top-left-radius: 8px;
+}
+
+.reticle-corner.top-right {
+    top: -2px;
+    right: -2px;
+    border-width: 3px 3px 0 0;
+    border-top-right-radius: 8px;
+}
+
+.reticle-corner.bottom-left {
+    bottom: -2px;
+    left: -2px;
+    border-width: 0 0 3px 3px;
+    border-bottom-left-radius: 8px;
+}
+
+.reticle-corner.bottom-right {
+    bottom: -2px;
+    right: -2px;
+    border-width: 0 3px 3px 0;
+    border-bottom-right-radius: 8px;
+}
+
+.scan-laser-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #ff1493 25%, #ffbfe0 50%, #ff1493 75%, transparent 100%);
+    box-shadow: 0 0 12px #ff1493, 0 0 25px #ff69b4;
+    opacity: 0.85;
+    animation: scanLaser 2.6s ease-in-out infinite alternate;
+}
+
+@keyframes scanLaser {
+    0% { top: 0%; opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { top: 99%; opacity: 0.6; }
+}
+
+/* Live Badge */
+.hud-live-tag {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: rgba(18, 2, 14, 0.75);
+    backdrop-filter: blur(8px);
+    border: 1px solid #ff4fa3;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 6px 12px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 7;
+    pointer-events: none;
+}
+
+.live-pulse-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ff1493;
+    box-shadow: 0 0 10px #ff1493;
+    animation: liveDotBlink 1s infinite alternate;
+}
+
+@keyframes liveDotBlink {
+    0% { opacity: 0.4; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Danger Flash Border */
+.hud-danger-flash {
+    position: absolute;
+    inset: 0;
+    border: 4px solid #ff0055;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 8;
+    transition: opacity 0.2s ease;
+}
+
+.hud-danger-flash.active {
+    animation: dangerFlashPulse 0.6s infinite alternate;
+}
+
+@keyframes dangerFlashPulse {
+    0% { opacity: 0.1; box-shadow: inset 0 0 20px rgba(255, 0, 85, 0.3); }
+    100% { opacity: 0.85; box-shadow: inset 0 0 50px rgba(255, 0, 85, 0.8); }
+}
+
+
+/* ============================================================
+   8D. REAL-TIME TELEMETRY PANEL
+   ============================================================ */
+
+.live-telemetry-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 640px;
+    padding: 16px;
+    background: linear-gradient(145deg, #ffffff, #fff5fa);
+    border: 2px solid #ff9ecf;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(180, 30, 110, 0.1);
+    align-items: center;
+}
+
+.telemetry-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+}
+
+.telemetry-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #9c4377;
+}
+
+.telemetry-value {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #ff1493;
+    letter-spacing: -0.5px;
+}
+
+.telemetry-progress-track {
+    width: 100%;
+    max-width: 120px;
+    height: 7px;
+    background: #ffd9eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 2px;
+}
+
+.telemetry-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #6bd58b, #ff69b4, #ff1493);
+    border-radius: 10px;
+    transition: width 0.15s ease-out;
+}
+
+.telemetry-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #fff0f7;
+    border: 1px solid #ff8ac5;
+    color: #b5176b;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+
+/* ============================================================
+   8E. SCANNER CONTROLS TOOLBAR
+   ============================================================ */
+
+.scanner-controls-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px auto;
+    max-width: 640px;
+}
+
+.scanner-tool-btn {
+    padding: 10px 16px;
+    background: #ffffff;
+    border: 2px solid #ff8ac5;
+    border-radius: 10px;
+    color: #70234e;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(180, 30, 110, 0.1);
+    margin: 0;
+    transition: all 0.2s ease;
+}
+
+.scanner-tool-btn:hover {
+    background: #fff0f8;
+    border-color: #ff1493;
+    color: #ff1493;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(255, 20, 147, 0.25);
+}
+
+.scanner-tool-btn.active {
+    background: linear-gradient(135deg, #ff1493, #ff4fac);
+    border-color: #ff1493;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 20, 147, 0.35);
+}
+
+.scanner-tool-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.camera-action-row {
+    margin-top: 18px;
+}
+
+.scanner-btn-capture {
+    display: inline-block;
+    padding: 16px 36px;
+    font-size: 17px;
+    font-weight: 800;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff007f, #ff1493, #ff4fa3);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255, 20, 147, 0.4);
+    transition: all 0.2s ease;
+}
+
+.scanner-btn-capture:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(255, 20, 147, 0.55);
+}
+
+.scanner-btn-capture:active {
+    transform: translateY(1px);
+}
+
+
+/* ============================================================
+   9. BUTTON
+   ============================================================ */
+
+button {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 16px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1493,
+            #ff4fac
+        );
+
+    color: white;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 7px 15px rgba(255, 20, 147, 0.3);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(255, 20, 147, 0.4);
+}
+
+
+button:active {
+    transform: translateY(1px);
+
+    box-shadow:
+        0 4px 8px rgba(255, 20, 147, 0.3);
+}
+
+
+button:focus {
+    outline: 3px solid rgba(255, 20, 147, 0.25);
+
+    outline-offset: 3px;
+}
+
+
+/* ============================================================
+   10. REPORT
+   ============================================================ */
+
+#report {
+    width: 100%;
+
+    margin-top: 40px;
+}
+
+
+/* ============================================================
+   11. MEDICAL REPORT
+   ============================================================ */
+
+.medical-report {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff7fb
+        );
+
+    border: 2px solid #ff8ac5;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    text-align: left;
+
+    box-shadow:
+        0 10px 25px rgba(160, 30, 100, 0.15);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.medical-report::before {
+    content:
+        "CONFIDENTIAL • MEDICAL SIMULATION • NOT REAL";
+
+    display: block;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #c0548c;
+
+    margin-bottom: 25px;
+}
+
+
+.medical-report h2 {
+    color: #d41472;
+
+    margin-bottom: 18px;
+
+    line-height: 1.4;
+}
+
+
+.medical-report h3 {
+    color: #e02b83;
+
+    margin-top: 28px;
+
+    margin-bottom: 14px;
+
+    font-size: 1.1rem;
+
+    letter-spacing: 0.5px;
+}
+
+
+.medical-report p {
+    margin-bottom: 15px;
+
+    line-height: 1.7;
+}
+
+
+.medical-report hr {
+    border: none;
+
+    border-top: 1px dashed #ff9dcc;
+
+    margin: 28px 0;
+}
+
+
+.report-by {
+    text-align: right;
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #ff1493;
+    letter-spacing: 1.2px;
+    margin-top: 18px !important;
+    margin-bottom: 0 !important;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 20, 147, 0.2);
+}
+
+
+/* ============================================================
+   12. BRAIN CELL RESULT AREA
+   ============================================================ */
+
+.brain-result {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin: 20px 0 25px;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f8,
+            #ffffff
+        );
+
+    border: 2px solid #ffb1d4;
+
+    border-radius: 18px;
+}
+
+
+/* ============================================================
+   13. BRAIN CELL COUNT
+   ============================================================ */
+
+.brain-count-area {
+    flex: 1;
+
+    min-width: 0;
+
+    text-align: center;
+}
+
+
+.brain-count-label {
+    color: #9a4b76;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+
+.brain-cells {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+
+    font-weight: 900;
+
+    color: #ff1493;
+
+    margin: 10px 0;
+
+    text-shadow:
+        2px 2px 0 #ffd1e8;
+
+    animation:
+        brainPulse 1.8s infinite;
+}
+
+
+@keyframes brainPulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+}
+
+
+/* ============================================================
+   14. MEME CARD
+   ============================================================ */
+
+.meme-card {
+    flex: 1;
+
+    min-width: 250px;
+
+    max-width: 400px;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #ffeaf5
+        );
+
+    border: 2px solid #ff8ac5;
+
+    text-align: center;
+
+    box-shadow:
+        0 7px 20px rgba(180, 30, 110, 0.12);
+
+    animation:
+        memeAppear 0.6s ease;
+}
+
+
+.meme-emoji {
+    font-size: 4rem;
+
+    line-height: 1;
+
+    margin-bottom: 15px;
+
+    animation:
+        memeBounce 2s infinite;
+}
+
+
+.meme-title {
+    font-size: 1.15rem;
+
+    font-weight: 900;
+
+    color: #d41472;
+
+    margin-bottom: 10px;
+}
+
+
+.meme-text {
+    font-size: 14px;
+
+    color: #70415d;
+
+    line-height: 1.5;
+
+    margin: 0;
+}
+
+
+@keyframes memeAppear {
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(30px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(1);
+    }
+}
+
+
+@keyframes memeBounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* ============================================================
+   15. SEVERITY
+   ============================================================ */
+
+.severity {
+    display: inline-block;
+
+    background: #ffe0ef;
+
+    color: #a80057;
+
+    padding: 10px 18px;
+
+    border-radius: 50px;
+
+    font-weight: bold;
+
+    font-size: 18px;
+
+    border: 1px solid #ff8ac5;
+
+    margin-top: 5px;
+}
+
+
+/* ============================================================
+   16. ACHIEVEMENT
+   ============================================================ */
+
+.achievement {
+    display: inline-block;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1493,
+            #ff69b4
+        );
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 50px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 15px rgba(255, 20, 147, 0.25);
+
+    animation:
+        badgePop 0.5s ease;
+
+    margin-top: 5px;
+}
+
+
+@keyframes badgePop {
+    0% {
+        transform: scale(0.5);
+
+        opacity: 0;
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+
+        opacity: 1;
+    }
+}
+
+
+/* ============================================================
+   17. DISCLAIMER
+   ============================================================ */
+
+.disclaimer {
+    font-size: 12px !important;
+
+    color: #a35b7f !important;
+
+    background: #fff0f7;
+
+    border-left: 4px solid #ff69b4;
+
+    padding: 14px;
+
+    border-radius: 6px;
+
+    margin-top: 20px;
+}
+
+
+/* ============================================================
+   18. LOADING SCREEN
+   ============================================================ */
+
+.loading-screen {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff0f8
+        );
+
+    border: 2px solid #ff8ac5;
+
+    border-radius: 18px;
+
+    padding: 45px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 25px rgba(160, 30, 100, 0.15);
+}
+
+
+.loading-screen h2 {
+    color: #ff1493;
+
+    margin-bottom: 20px;
+
+    animation:
+        loadingPulse 1s infinite;
+}
+
+
+.loading-screen p {
+    color: #75415d;
+
+    margin-bottom: 20px;
+
+    line-height: 1.6;
+}
+
+
+@keyframes loadingPulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+
+/* ============================================================
+   19. LOADING BAR
+   ============================================================ */
+
+.loading-bar-container {
+    width: 100%;
+
+    max-width: 650px;
+
+    height: 30px;
+
+    margin: 25px auto;
+
+    background: #ffd9eb;
+
+    border-radius: 50px;
+
+    overflow: hidden;
+
+    border: 2px solid #ff8ac5;
+
+    box-shadow:
+        inset 0 2px 5px rgba(150, 30, 90, 0.15);
+}
+
+
+.loading-bar {
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff69b4,
+            #ff1493,
+            #ff69b4
+        );
+
+    border-radius: 50px;
+
+    transition:
+        width 0.1s linear;
+}
+
+
+/* ============================================================
+   20. PERFECT BRAIN MESSAGE
+   ============================================================ */
+
+.perfect-brain {
+    background:
+        linear-gradient(
+            135deg,
+            #f0fff5,
+            #ffffff
+        );
+
+    border: 3px solid #6bd58b;
+
+    border-radius: 20px;
+
+    padding: 35px 25px;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(60, 180, 90, 0.15);
+
+    animation:
+        perfectAppear 0.7s ease;
+}
+
+
+.perfect-brain h2 {
+    color: #159447;
+
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+}
+
+
+.perfect-brain p {
+    color: #356b46;
+
+    line-height: 1.6;
+
+    margin-bottom: 12px;
+}
+
+
+.perfect-brain .big-message {
+    font-size: 1.5rem;
+
+    font-weight: bold;
+
+    color: #159447;
+}
+
+
+.brain-icon {
+    font-size: 4rem;
+
+    margin-top: 20px;
+
+    animation:
+        brainFloat 2s ease-in-out infinite;
+}
+
+
+@keyframes perfectAppear {
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.8)
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+@keyframes brainFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* ============================================================
+   21. LEADERBOARD
+   ============================================================ */
+
+#leaderboard {
+    width: 100%;
+
+    max-width: 950px;
+
+    margin: 45px auto 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff1f8
+        );
+
+    border: 3px solid #ff69b4;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 10px 30px rgba(160, 30, 100, 0.15);
+
+    text-align: left;
+}
+
+
+#leaderboard h2 {
+    text-align: center;
+
+    color: #d41472;
+
+    margin-bottom: 12px;
+}
+
+
+.leaderboard-subtitle {
+    text-align: center;
+
+    color: #925270;
+
+    margin-bottom: 25px;
+
+    font-style: italic;
+}
+
+
+.leaderboard-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.leaderboard-entry {
+    display: grid;
+
+    grid-template-columns:
+        50px
+        minmax(100px, 1fr)
+        minmax(100px, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #ffd0e5;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.leaderboard-entry:hover {
+    transform: translateX(5px);
+
+    box-shadow:
+        0 5px 15px rgba(200, 30, 120, 0.12);
+}
+
+
+.leaderboard-entry:first-child {
+    background:
+        linear-gradient(
+            135deg,
+            #fff5c7,
+            #ffffff
+        );
+
+    border: 2px solid #f2c94c;
+}
+
+
+.leaderboard-entry:nth-child(2) {
+    background:
+        linear-gradient(
+            135deg,
+            #f2f2f2,
+            #ffffff
+        );
+}
+
+
+.leaderboard-entry:nth-child(3) {
+    background:
+        linear-gradient(
+            135deg,
+            #ffe8d7,
+            #ffffff
+        );
+}
+
+
+.rank {
+    font-size: 1.4rem;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+
+.player-name {
+    font-weight: bold;
+
+    color: #51213d;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.player-badge {
+    color: #c21870;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+.player-score {
+    font-weight: bold;
+
+    color: #ff1493;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   22. FOOTER
+   ============================================================ */
+
+.site-footer {
+    text-align: center;
+
+    padding: 35px 15px 20px;
+
+    color: #7e4665;
+
+    line-height: 1.8;
+}
+
+
+.site-footer p {
+    margin-bottom: 8px;
+}
+
+
+/* ============================================================
+   23. SCREEN SHAKE
+   ============================================================ */
+
+.screen-shake {
+    animation:
+        screenShake 0.12s infinite;
+}
+
+
+@keyframes screenShake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    20% {
+        transform: translate(-5px, 3px);
+    }
+
+    40% {
+        transform: translate(5px, -3px);
+    }
+
+    60% {
+        transform: translate(-4px, -2px);
+    }
+
+    80% {
+        transform: translate(4px, 2px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+/* ============================================================
+   24. GLITCH MODE
+   ============================================================ */
+
+.glitch-mode {
+    animation:
+        glitchFlash 0.15s infinite;
+}
+
+
+.glitch-mode::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 20, 147, 0.08),
+            rgba(255, 20, 147, 0.08) 2px,
+            transparent 2px,
+            transparent 5px
+        );
+
+    mix-blend-mode: multiply;
+}
+
+
+@keyframes glitchFlash {
+    0% {
+        filter: none;
+    }
+
+    20% {
+        filter:
+            hue-rotate(20deg)
+            contrast(1.2);
+    }
+
+    40% {
+        filter:
+            hue-rotate(-20deg)
+            contrast(1.4);
+    }
+
+    60% {
+        filter:
+            saturate(2)
+            contrast(1.2);
+    }
+
+    80% {
+        filter:
+            hue-rotate(30deg)
+            saturate(1.5);
+    }
+
+    100% {
+        filter: none;
+    }
+}
+
+
+.glitch-mode .medical-report {
+    border-color: #ff1493;
+
+    box-shadow:
+        0 0 15px #ff1493,
+        0 0 40px rgba(255, 20, 147, 0.5);
+}
+
+
+/* ============================================================
+   25. MOBILE DESIGN
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px 8px;
+    }
+
+
+    .container {
+        padding: 25px 15px;
+
+        border-radius: 18px;
+    }
+
+
+    .input-section {
+        padding: 20px 15px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .brain-result {
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+
+    .meme-card {
+        width: 100%;
+
+        max-width: none;
+    }
+
+
+    .leaderboard-entry {
+        grid-template-columns:
+            35px
+            1fr;
+
+        gap: 8px;
+    }
+
+
+    .player-badge,
+    .player-score {
+        grid-column: 2;
+    }
+
+    .mode-selector {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .mode-tab {
+        padding: 10px 14px;
+        font-size: 13.5px;
+    }
+
+    .live-telemetry-panel {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .telemetry-item.stage-item {
+        grid-column: 1;
+    }
+
+    .scanner-controls-toolbar {
+        gap: 8px;
+    }
+
+    .scanner-tool-btn {
+        flex: 1 1 calc(50% - 10px);
+        padding: 10px 8px;
+        font-size: 12.5px;
+    }
+
+    .scanner-btn-capture {
+        width: 100%;
+        padding: 15px 20px;
+    }
+}
+
+
+/* ============================================================
+   26. SMALL PHONES
+   ============================================================ */
+
+@media (max-width: 400px) {
+
+    body {
+        padding: 8px 5px;
+    }
+
+
+    .container {
+        padding: 20px 10px;
+    }
+
+
+    button {
+        width: 100%;
+    }
+
+
+    .medical-report {
+        padding: 20px 14px;
+    }
+
+
+    .brain-cells {
+        font-size: 2.5rem;
+    }
+
+
+    .meme-emoji {
+        font-size: 3rem;
+    }
+
+}
+
+
+/* ============================================================
+   END OF CSS
+   ============================================================ */

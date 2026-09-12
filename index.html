@@ -1,1 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Pink Pixel Autopsy - Find out how many fictional brain cells your image destroys."
+    >
+
+    <title>Pink Pixel Autopsy</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- HEADER -->
+        <header class="main-header">
+
+            <h1>
+                🩷 PINK PIXEL AUTOPSY
+            </h1>
+
+            <p class="subtitle">
+                Upload an image and discover how many
+                fictional brain cells it costs you.
+            </p>
+
+            <p class="warning-text">
+                ⚠️ This medical technology is absolutely not real.
+            </p>
+
+        </header>
+
+
+        <!-- USERNAME -->
+        <section class="input-section">
+
+            <h2>
+                👤 PATIENT INFORMATION
+            </h2>
+
+            <p>
+                Enter your name before we begin the
+                extremely questionable medical procedure.
+            </p>
+
+            <label for="username">
+                Patient Username
+            </label>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter your username"
+                maxlength="30"
+                autocomplete="nickname"
+            >
+
+        </section>
+
+
+        <!-- IMAGE / SCANNER SECTION -->
+        <section class="input-section" id="acquisitionSection">
+
+            <h2>
+                📸 PATIENT IMAGE ACQUISITION
+            </h2>
+
+            <p>
+                Select an uploaded image or launch the real-time camera scanner to detect suspiciously dangerous levels of pink.
+            </p>
+
+            <!-- MODE SELECTOR TABS -->
+            <div class="mode-selector" role="tablist" aria-label="Detection Mode">
+                <button
+                    type="button"
+                    id="tabUpload"
+                    class="mode-tab active"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="uploadModeContainer"
+                >
+                    📁 Upload Image
+                </button>
+                <button
+                    type="button"
+                    id="tabCamera"
+                    class="mode-tab"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="cameraModeContainer"
+                >
+                    📹 Live Camera Scanner
+                </button>
+            </div>
+
+            <!-- UPLOAD MODE CONTAINER -->
+            <div id="uploadModeContainer" class="mode-container active">
+
+                <label for="imageInput">
+                    Select Image File
+                </label>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                >
+
+                <div class="preview-container">
+
+                    <img
+                        id="imagePreview"
+                        alt="Uploaded image preview"
+                    >
+
+                </div>
+
+            </div>
+
+            <!-- CAMERA SCANNER MODE CONTAINER -->
+            <div id="cameraModeContainer" class="mode-container" style="display: none;">
+
+                <div class="camera-viewport-wrapper">
+
+                    <!-- OFFLINE / PERMISSION OVERLAY -->
+                    <div class="camera-status-overlay" id="cameraStatusOverlay">
+                        <div class="status-icon">📹</div>
+                        <p class="status-title" id="cameraStatusTitle">Camera Scanner Offline</p>
+                        <p class="status-subtitle" id="cameraStatusSubtitle">
+                            Click "Start Camera" to activate real-time pink detection and live brain cell telemetry.
+                        </p>
+                        <button
+                            type="button"
+                            id="startCameraBtn"
+                            class="scanner-btn-primary"
+                        >
+                            ⚡ Start Camera
+                        </button>
+                    </div>
+
+                    <!-- LIVE VIDEO & HUD CANVAS -->
+                    <video
+                        id="cameraVideo"
+                        autoplay
+                        playsinline
+                        muted
+                    ></video>
+
+                    <canvas id="scannerOverlayCanvas"></canvas>
+
+                    <!-- SCI-FI RETICLE & SCANNER LINE -->
+                    <div class="scanner-hud-reticle" id="scannerReticle">
+                        <div class="reticle-corner top-left"></div>
+                        <div class="reticle-corner top-right"></div>
+                        <div class="reticle-corner bottom-left"></div>
+                        <div class="reticle-corner bottom-right"></div>
+                        <div class="scan-laser-line"></div>
+                    </div>
+
+                    <!-- LIVE BADGE -->
+                    <div class="hud-live-tag" id="hudLiveTag">
+                        <span class="live-pulse-dot"></span> LIVE SCANNER
+                    </div>
+
+                    <!-- HIGH PINK DANGER FLASH -->
+                    <div class="hud-danger-flash" id="hudDangerFlash"></div>
+
+                </div>
+
+                <!-- REAL-TIME TELEMETRY PANEL -->
+                <div class="live-telemetry-panel" id="liveTelemetryPanel">
+
+                    <div class="telemetry-item">
+                        <span class="telemetry-label">Live Pink Exposure</span>
+                        <span class="telemetry-value" id="livePinkPercent">0.00%</span>
+                        <div class="telemetry-progress-track">
+                            <div class="telemetry-progress-fill" id="livePinkMeter"></div>
+                        </div>
+                    </div>
+
+                    <div class="telemetry-item">
+                        <span class="telemetry-label">Live Brain Cells At Risk</span>
+                        <span class="telemetry-value" id="liveBrainCells">0</span>
+                    </div>
+
+                    <div class="telemetry-item stage-item">
+                        <span class="telemetry-label">Live Diagnosis</span>
+                        <span class="telemetry-badge" id="liveStageBadge">Stage 1: Mild Pink Exposure</span>
+                    </div>
+
+                </div>
+
+                <!-- SCANNER CONTROLS TOOLBAR -->
+                <div class="scanner-controls-toolbar">
+
+                    <button
+                        type="button"
+                        id="toggleCameraBtn"
+                        class="scanner-tool-btn"
+                        title="Start or Stop Camera"
+                    >
+                        ⏹️ Stop Camera
+                    </button>
+
+                    <button
+                        type="button"
+                        id="flipCameraBtn"
+                        class="scanner-tool-btn"
+                        title="Switch between front and back camera"
+                    >
+                        🔄 Flip Camera
+                    </button>
+
+                    <button
+                        type="button"
+                        id="toggleMaskBtn"
+                        class="scanner-tool-btn active"
+                        title="Toggle Pink Heatmap Overlay"
+                    >
+                        ✨ Heatmap: ON
+                    </button>
+
+                    <button
+                        type="button"
+                        id="toggleSoundBtn"
+                        class="scanner-tool-btn"
+                        title="Toggle Geiger audio pulse"
+                    >
+                        🔇 Sound: OFF
+                    </button>
+
+                </div>
+
+                <div class="camera-action-row">
+
+                    <button
+                        type="button"
+                        id="captureAnalyzeBtn"
+                        class="scanner-btn-capture"
+                    >
+                        🩺 Freeze Frame & Perform Autopsy
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AUTOPSY BUTTON (FOR UPLOAD MODE) -->
+        <section class="input-section" id="autopsyActionSection">
+
+            <h2>
+                🩺 READY FOR AUTOPSY?
+            </h2>
+
+            <p id="autopsyInstructionText">
+                Our highly questionable medical equipment is standing by.
+            </p>
+
+            <button
+                id="analyzeButton"
+                type="button"
+            >
+                🩺 Perform Autopsy
+            </button>
+
+        </section>
+
+
+        <!-- REPORT -->
+        <section
+            id="report"
+            aria-live="polite"
+        ></section>
+
+    </main>
+
+
+    <!-- LEADERBOARD -->
+    <section
+        id="leaderboard"
+        aria-label="Brain cell casualty leaderboard"
+    ></section>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <p>
+            🧠 No actual brain cells were harmed.
+        </p>
+
+        <p>
+            🩷 Pink Pixel Autopsy &copy; 2026
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
