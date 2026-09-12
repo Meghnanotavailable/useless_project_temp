@@ -2,7 +2,7 @@
 
 
 
-# [Project Name] 🎯
+# PINK PIXEL AUTOPSY🎯
 
 
 ## Basic Details
